@@ -56,16 +56,30 @@ h1 {
     display: flex;
     justify-content: center;
     align-items: center;
+    position: relative;
 
 }
 .card img {
     width: 100px;
     height: 100px;
-    object-fit: cover;
+    background-color: #A7E9AF;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    backface-visibility: hidden;
+    transition: all .5s;
+    transform-style: preserve-3d;
 }
-@media screen and (max-width: 518px) {
+.back {
+    transform: rotateY(180deg);
+  }
 
-    .card-box {
-        flex-direction: column;
-    }
-}
+.card:active .back {
+    transform: rotateY(0deg);
+  }
+.card:active .front {
+    transform: rotateY(-180deg);
+  }
+
+            
