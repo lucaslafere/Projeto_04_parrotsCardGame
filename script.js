@@ -26,7 +26,15 @@ function qtdCard () {
         <img src="assets/${imgLista[i]}" alt="" class="back">
     </div>`;
     cardList.push(i);
+    cardList.sort(comparador);
+    imgLista.sort(comparador);
     }
 }
 
+cardList.sort(comparador); // Após esta linha, a minhaArray estará embaralhada
+imgLista.sort(comparador);
 
+// Esta função pode ficar separada do código acima, onde você preferir
+function comparador() { 
+	return Math.random() - 0.5; 
+}
