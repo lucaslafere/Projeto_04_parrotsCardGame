@@ -3,12 +3,20 @@ const card = document.querySelector(".card");
 const cardList = [];
 const imgLista = [
 'bobrossparrot.gif',
+'bobrossparrot.gif',
+'explodyparrot.gif',
 'explodyparrot.gif',
 'fiestaparrot.gif', 
+'fiestaparrot.gif', 
+'metalparrot.gif',
 'metalparrot.gif',
 'revertitparrot.gif',
+'revertitparrot.gif',
 'tripletsparrot.gif',
+'tripletsparrot.gif',
+'unicornparrot.gif',
 'unicornparrot.gif'];
+//fazer um splice nessa lista resolve? divide depois embaralha, sla?
 
 let qtd = prompt("Com quantas cartas deseja jogar?"); //pergunta qtd cartas a jogar
 
@@ -26,12 +34,11 @@ function qtdCard () {
         <img src="assets/${imgLista[i]}" alt="" class="back">
     </div>`;
     cardList.push(i);
-    cardList.sort(comparador);
-    imgLista.sort(comparador);
     }
 }
 
-cardList.sort(comparador); // Após esta linha, a minhaArray estará embaralhada
+// Após esta linha, a minhaArray estará embaralhada
+cardList.sort(comparador);
 imgLista.sort(comparador);
 
 // Esta função pode ficar separada do código acima, onde você preferir
