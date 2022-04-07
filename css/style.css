@@ -58,11 +58,15 @@ h1 {
     align-items: center;
     position: relative;
 
+    cursor: pointer;
+    
+
 }
 .card img {
     width: 100px;
     height: 100px;
     background-color: #A7E9AF;
+
     display: flex;
     align-items: center;
     justify-content: center;
@@ -75,10 +79,10 @@ h1 {
     transform: rotateY(180deg);
   }
 
-.card:active .back {
+  .card:active .back {
     transform: rotateY(0deg);
   }
-.card:active .front {
+  .card:active .front {
     transform: rotateY(-180deg);
   }
 
