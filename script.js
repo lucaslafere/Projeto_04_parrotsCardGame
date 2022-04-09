@@ -72,15 +72,10 @@ function comparador() {
 
 //flipcard e manter virado
 function flipCard(elemento) {
-    elemento.children[0].classList.add("flip");
-    elemento.children[1].classList.add("flip");
+    elemento.children[0].classList.toggle("flip");
+    elemento.children[1].classList.toggle("flip");
 }
-function flipBack (elemento) {
-    elemento.children[0].classList.remove("flip");
-    elemento.children[1].classList.remove("flip");
-    elemento2.children[0].classList.remove("flip");
-    elemento2.children[1].classList.remove("flip");
-}
+
 
 //comparar clicks pra manter virada ou desvirar e contar pontos
 
@@ -93,18 +88,17 @@ function pickCard(elemento) {
     } else if (click1 !== undefined && click2 === undefined) {
         click2 = elemento;
     } 
-}
-
-
-
-
-
-
-
-
-
-
-
-if (acertou == cardList.length) {
-    alert(`Você ganhou em ${jogadas}`)
+    if (click1.innerHTML == click2.innerHTML) {
+        acertos++;
+        click1 = undefined;
+        click2 = undefined;
+    }
+    else if (click1.innerHTML !== click2.innerHTML) {
+        click1.children[0].classList.remove("flip");
+        click1.children[1].classList.remove("flip");
+        click2.children[0].classList.remove("flip");
+        click2.children[1].classList.remove("flip");
+        click1 = undefined;
+        click2 = undefined;
+    }
 }
