@@ -57,7 +57,6 @@ h1 {
     justify-content: center;
     align-items: center;
     position: relative;
-
     cursor: pointer;
     
 
@@ -71,19 +70,30 @@ h1 {
     align-items: center;
     justify-content: center;
     position: absolute;
+
+}
+.face {
+    width: 117px;
+    height: 146px;
+    background-color: #A7E9AF;
+    border-radius: 10px;
+    box-shadow: 1px 1px 1px rgba(0,0,0,.3);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
     backface-visibility: hidden;
     transition: all .5s;
     transform-style: preserve-3d;
-}
-.back {
+  }
+
+.back-face {
     transform: rotateY(180deg);
   }
 
-  .card:active .back {
+.back-face.flip {
     transform: rotateY(0deg);
-  }
-  .card:active .front {
+}
+.front-face.flip {
     transform: rotateY(-180deg);
-  }
-
-            
+}
