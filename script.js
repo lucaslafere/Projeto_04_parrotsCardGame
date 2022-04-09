@@ -87,18 +87,19 @@ function pickCard(elemento) {
         click1 = elemento;
     } else if (click1 !== undefined && click2 === undefined) {
         click2 = elemento;
-    } 
+    }
     if (click1.innerHTML == click2.innerHTML) {
         acertos++;
         click1 = undefined;
         click2 = undefined;
-    }
-    else if (click1.innerHTML !== click2.innerHTML) {
-        click1.children[0].classList.remove("flip");
-        click1.children[1].classList.remove("flip");
-        click2.children[0].classList.remove("flip");
-        click2.children[1].classList.remove("flip");
-        click1 = undefined;
-        click2 = undefined;
+    } else if (click1.innerHTML !== click2.innerHTML) {
+        setTimeout(function () {
+            click1.children[0].classList.remove("flip");
+            click1.children[1].classList.remove("flip");
+            click2.children[0].classList.remove("flip");
+            click2.children[1].classList.remove("flip");
+            click1 = undefined;
+            click2 = undefined;
+        }, 1000)
     }
 }
