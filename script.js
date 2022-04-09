@@ -77,6 +77,7 @@ function flipCard(elemento) {
 
 //comparar clicks pra manter virada ou desvirar e contar pontos
 
+
 function pickCard(elemento) {
     flipCard(elemento);
     jogadas++;
