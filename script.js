@@ -90,7 +90,7 @@ function pickCard(elemento) {
         
     }
 
-    if (click1.innerHTML == click2.innerHTML && click1 !== click2) {//testando se sao iguais
+    if (click1.innerHTML == click2.innerHTML && click1 !== click2) {//testando se tem conteudo igual e se sao cards diferentes
         acertos++;
         click1 = undefined;
         click2 = undefined;
