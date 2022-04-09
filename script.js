@@ -70,8 +70,8 @@ function comparador() {
 
 //flipcard e manter virado
 function flipCard(elemento) {
-    elemento.children[0].classList.toggle("flip");
-    elemento.children[1].classList.toggle("flip");
+    elemento.children[0].classList.add("flip");
+    elemento.children[1].classList.add("flip");
 }
 
 
@@ -81,16 +81,20 @@ function pickCard(elemento) {
     flipCard(elemento);
     jogadas++;
 
-    if (click1 === undefined) {
+    if (click1 === undefined) { //pegando carta 1
         click1 = elemento;
-    } else if (click1 !== undefined && click2 === undefined) {
+        
+    } else if (click1 !== undefined && click2 === undefined) { //pegando carta2
         click2 = elemento;
+        
     }
-    if (click1.innerHTML == click2.innerHTML) {
+
+    if (click1.innerHTML == click2.innerHTML) {//testando se sao iguais
         acertos++;
         click1 = undefined;
         click2 = undefined;
-    } else if (click1.innerHTML !== click2.innerHTML) {
+        
+    } else if (click1.innerHTML !== click2.innerHTML) {// caso sejam diferentes, virar e resetar
         setTimeout(function () {
             click1.children[0].classList.remove("flip");
             click1.children[1].classList.remove("flip");
@@ -98,6 +102,7 @@ function pickCard(elemento) {
             click2.children[1].classList.remove("flip");
             click1 = undefined;
             click2 = undefined;
+
         }, 1000)
     }
     setTimeout(endGame(), 1500)
@@ -110,4 +115,6 @@ function endGame () {
     }, 300)
 }
 }
+
+
 
