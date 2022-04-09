@@ -22,9 +22,6 @@ let jogadas = 0; //numero de clicks/jogadas
 let click1; //valor do click1
 let click2; //valor do click2
 let acertos = 0;
-let lastClick = 0;
-let delay = 1000;
-let elemento2;
 
 
 
@@ -33,10 +30,11 @@ let elemento2;
 
 
 
-let qtd = prompt("Com quantas cartas deseja jogar?"); //pergunta qtd cartas a jogar
+
+let qtd = prompt("Com quantas cartas deseja jogar? Escolha de 4 a 14"); //pergunta qtd cartas a jogar
 
 while (qtd % 2 !== 0 || qtd < 4 || qtd > 14) { //impede que seja impar, <4 e >14
-    qtd = prompt("Com quantas cartas deseja jogar?");
+    qtd = prompt("Com quantas cartas deseja jogar? Escolha de 4 a 14");
 }
 if (qtd % 2 == 0 || qtd >= 4 || qtd <= 14) {
     qtdCard(); //cria array com a qtd carta escolhidas
@@ -102,4 +100,14 @@ function pickCard(elemento) {
             click2 = undefined;
         }, 1000)
     }
+    setTimeout(endGame(), 1500)
 }
+
+function endGame () {
+    if (acertos === (cardList.length/2)){
+        setTimeout(function (){
+        alert(`Você ganhou em ${jogadas} jogadas!`)
+    }, 300)
+}
+}
+
